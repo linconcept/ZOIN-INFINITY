@@ -1,76 +1,83 @@
-Bitcoin Core integration/staging tree
+Zoin Core Infinity integration/staging tree
 =====================================
 
 [![Build Status](https://travis-ci.org/bitcoin/bitcoin.svg?branch=master)](https://travis-ci.org/bitcoin/bitcoin)
 
-https://bitcoincore.org
 
-What is Bitcoin?
-----------------
+Zoin
+What is Zoin? UNDER DEVELOPMENT
 
-Bitcoin is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. Bitcoin uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Bitcoin Core is the name of open source
-software which enables the use of this currency.
+Zoin is the implementation of the Zerocoin protocol ( http://zerocoin.org ) guaranteeing true financial anonymity.
 
-For more information, as well as an immediately useable, binary version of
-the Bitcoin Core software, see https://bitcoincore.org/en/download/, or read the
-[original whitepaper](https://bitcoincore.org/bitcoin.pdf).
+    2.5 minute block target
+    21.6 million total coins hardcap
+    100 coins per block as subsidy(currently @50/block)
+    Subsidy halves every 210,000 blocks (approximately 12 months)
 
+For more information, as well as an immediately useable, binary version of the zoin client sofware, see https://github.com/zoinofficial/zoin/releases.
 License
--------
 
-Bitcoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
-information or see https://opensource.org/licenses/MIT.
+Zoin is released under the terms of the MIT license. See COPYING for more information or see http://opensource.org/licenses/MIT.
+Development process
 
-Development Process
--------------------
+Developers work in their own trees, then submit pull requests when they think their feature or bug fix is ready.
 
-The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
-regularly to indicate new official, stable release versions of Bitcoin Core.
+If it is a simple/trivial/non-controversial change, then one of the Zoin development team members simply pulls it.
 
-The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+If it is a more complicated or potentially controversial change, then the patch submitter will be asked to start a discussion (if they haven't already) on the Discord.
 
-Testing
--------
+The patch will be accepted if there is broad consensus that it is a good thing. Developers should expect to rework and resubmit patches if the code doesn't match the project's coding conventions (see doc/coding.txt) or are controversial.
 
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
+The master branch is regularly built and tested, but is not guaranteed to be completely stable. Tags are created regularly to indicate new official, stable release versions of Zoin.
+Linux Build Instructions and Notes
+Dependencies
 
-### Automated Testing
+    Update packages
 
-Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`. Further details on running
-and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
+    sudo apt-get update
 
-There are also [regression and integration tests](/test), written
-in Python, that are run automatically on the build server.
-These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
+    Install required packagages
 
-The Travis CI system makes sure that every pull request is built for Windows, Linux, and macOS, and that unit/sanity tests are run automatically.
+    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-all-dev
 
-### Manual Quality Assurance (QA) Testing
+    Install Berkeley DB 4.8
 
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
+    sudo apt-get install software-properties-common
+    sudo add-apt-repository ppa:zoin/zoin
+    sudo apt-get update
+    sudo apt-get install libdb4.8-dev libdb4.8++-dev
 
-Translations
-------------
+    Install QT 5
 
-Changes to translations as well as new translations can be submitted to
-[Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
+    sudo apt-get install libminiupnpc-dev libzmq3-dev
+    sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev
 
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
+Build
 
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.
+    Clone the source:
 
-Translators should also subscribe to the [mailing list](https://groups.google.com/forum/#!forum/bitcoin-translators).
+    git clone https://github.com/LindaSunshine/zoin-Infinity
+
+    Build Zoin-core:
+
+    Configure and build the headless zoin binaries as well as the GUI (if Qt is found).
+
+    You can disable the GUI build by passing --without-gui to configure.
+
+    ./autogen.sh
+    ./configure
+    make
+
+    It is recommended to build and run the unit tests:
+
+    make check
+
+Mac OS X Build Instructions and Notes
+
+See (doc/build-osx.md) for instructions on building on Mac OS X.
+Windows (64/32 bit) Build Instructions and Notes
+
+See (doc/build-windows.md) for instructions on building on Windows 64/32 bit.
+Copyright
+
+Copyright (c) 2016-2018 Linda Sunshine Zoin Copyright (c) 2016 Zcoin Developers Copyright (c) 2013-2015 Bitcoin Developers
