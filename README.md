@@ -1,7 +1,7 @@
 Zoin Core Infinity integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/lindasunshine/zoininfinity.svg?branch=master)](https://travis-ci.org/lindasunshine/Zoininfinity)
+[![Build Status](https://travis-ci.org//LindaSunshine/ZOIN-INFINITY.svg?branch=master)](https://travis-ci.org/l/LindaSunshine/ZOIN-INFINITY)
 
 
 Zoin
