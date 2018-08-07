@@ -4,20 +4,21 @@ Zoin Core Infinity integration/staging tree
 [![Build Status](https://travis-ci.org/LindaSunshine/ZOIN-INFINITY.svg?branch=master)](https://travis-ci.org/LindaSunshine/ZOIN-INFINITY)
 
 
-Zoin
-What is Zoin? UNDER DEVELOPMENT
+Zoin Core Infinity
+What is Zoin? UNDER DEVELOPMENT - Hard Fork -TBD
 
 Zoin is the implementation of the Zerocoin protocol ( http://zerocoin.org ) guaranteeing true financial anonymity.
 
     2.5 minute block target
-    21.6 million total coins hardcap
-    100 coins per block as subsidy(currently @50/block)
+    21 million total coins hardcap - 7.3 Milion Burned/back to coinbase Hard Fork TBD - Lower available supply
+    12.5 coins per block as subsidy(40% Mining/60% POS MASTERNODES)
     Subsidy halves every 210,000 blocks (approximately 12 months)
 
-For more information, as well as an immediately useable, binary version of the zoin client sofware, see https://github.com/zoinofficial/zoin/releases.
+For more information, as well as an immediately useable, binary version of the zoin client sofware, see https://TBD
+
 License
 
-Zoin is released under the terms of the MIT license. See COPYING for more information or see http://opensource.org/licenses/MIT.
+Zoin INFINITY is released under the terms of the MIT license. See COPYING for more information or see http://opensource.org/licenses/MIT.
 Development process
 
 Developers work in their own trees, then submit pull requests when they think their feature or bug fix is ready.
@@ -58,7 +59,7 @@ Build
 
     git clone https://github.com/LindaSunshine/zoin-Infinity
 
-    Build Zoin-core:
+    Build Zoin Infinity-core:
 
     Configure and build the headless zoin binaries as well as the GUI (if Qt is found).
 
@@ -80,4 +81,4 @@ Windows (64/32 bit) Build Instructions and Notes
 See (doc/build-windows.md) for instructions on building on Windows 64/32 bit.
 Copyright
 
-Copyright (c) 2016-2018 Linda Sunshine Zoin Copyright (c) 2016 Zcoin Developers Copyright (c) 2013-2015 Bitcoin Developers
+Copyright (c) 2018 Linda Sunshine Zoin Infinity Copyright (c) 2016 Zcoin Developers Copyright (c) 2013-2015 Bitcoin Developers
