@@ -9,7 +9,6 @@ cache:
   - depends/sdk-sources
   - $HOME/.ccache
 stages:
-  - lint
   - test
 env:
   global:
@@ -159,5 +158,4 @@ jobs:
         - test/lint/git-subtree-check.sh src/leveldb
         - test/lint/check-doc.py
         - test/lint/check-rpc-mappings.py .
-        - test/lint/lint-all.sh
           fi
